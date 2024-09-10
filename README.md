@@ -3,7 +3,7 @@ Magiclabs mobile SDK
 
 > **⚠️ Warning: This is a Mock SDK**
 >
-> The `MagiclabsMock` SDK provided here is **not operational** and is intended for **testing purposes only**. It simulates the behavior of the real SDK but does not perform actual network requests, photo analysis, or project manipulation. This mock version should be used solely for integration testing and validating workflows without interacting with live systems.
+> The `MagiclabsMock` SDK provided here is **not operational** and is intended for **testing purposes only**. It simulates the behavior of the real SDK but does not perform actual network requests, photo analysis, or surface manipulation. This mock version should be used solely for integration testing. The data it returns and its internal "surface design logic" is barebones and in no way reflects the designs that will be produced by the operational SDK.
 
 
 ## Table of Contents
@@ -26,7 +26,9 @@ Magiclabs mobile SDK
       - [Setting Up the Event Handler](#setting-up-the-event-handler)
     - [Retrieving design options](#retrieving-design-options)
     - [Photo Analysis](#photo-analysis)
-
+  - [Available SDK Methods](#available-sdk-methods)
+    - [iOS/Swift Methods](#iosswift-methods)
+    - [Android/Kotlin Methods](#androidkotlin-methods)
 
 
 ## Overview
@@ -248,3 +250,39 @@ val photos = listOf(
 // Call the analyzePhotos method
 val results = sdk.analyzePhotos(photos)
 ```
+
+
+## Available SDK Methods
+The following table lists the key methods provided by the MagicLabs SDK for both iOS and Android.
+
+### iOS/Swift Methods
+
+| Method Signature                                                                                        |
+| ------------------------------------------------------------------------------------------------------- |
+| `initialize(configuration: ClientConfiguration)`                                                        |
+| `autofillOptions(photoCount: Int, completion: (Result<AutofillOptions, Error>) -> Void)`                |
+| `analyzePhotos(photos: [Photo], completion: (Result<Void, Error>) -> Void)`                             |
+| `autofillProject(autofillRequest: AutofillRequest, completion: (Result<Void, Error>) -> Void)`          |
+| `resizeProject(project: Project, completion: (Result<Void, Error>) -> Void)`                            |
+| `restyleProject(project: Project, completion: (Result<Void, Error>) -> Void)`                           |
+| `autofillSurface(autofillRequest: AutofillRequest, completion: (Result<Void, Error>) -> Void)`          |
+| `shuffleSurface(shuffleRequest: SurfaceUpdateRequest, completion: (Result<Void, Error>) -> Void)`       |
+| `autoAdaptSurface(autoAdaptRequest: SurfaceUpdateRequest, completion: (Result<Void, Error>) -> Void)`   |
+| `suggestSurfaces(suggestRequest: SurfaceUpdateRequest, completion: (Result<[Surface], Error>) -> Void)` |
+
+### Android/Kotlin Methods
+
+| Method Signature                                                               |
+| ------------------------------------------------------------------------------ |
+| `initialize(configuration: ClientConfiguration)`                               |
+| `autofillOptions(photoCount: Int): Result<AutofillOptions>`                    |
+| `analyzePhotos(photos: List<Photo>): Result<Unit>`                             |
+| `autofillProject(autofillRequest: AutofillRequest): Result<Unit>`              |
+| `resizeProject(project: Project): Result<Unit>`                                |
+| `restyleProject(project: Project): Result<Unit>`                               |
+| `autofillSurface(autofillRequest: AutofillRequest): Result<Unit>`              |
+| `shuffleSurface(shuffleRequest: SurfaceUpdateRequest): Result<Unit>`           |
+| `autoAdaptSurface(autoAdaptRequest: SurfaceUpdateRequest): Result<Unit>`       |
+| `suggestSurfaces(suggestRequest: SurfaceUpdateRequest): Result<List<Surface>>` |
+
+
