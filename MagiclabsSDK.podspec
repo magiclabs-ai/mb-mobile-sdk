@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "MagiclabsSDK"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "Magiclabs SDK for iOS"
   spec.description  = "Create designs using the Magiclabs photobook design service"
   spec.homepage     = "https://github.com/magiclabs-ai/mb-mobile-sdk"
@@ -9,7 +9,7 @@ Pod::Spec.new do |spec|
 
   spec.platform     = :ios, "15.0"
 
-  spec.source       = { :http => "https://github.com/magiclabs-ai/mb-mobile-sdk/releases/download/0.0.1/MagiclabsSDK.xcframework.zip" }
+  spec.source       = { :http => "https://github.com/magiclabs-ai/mb-mobile-sdk/releases/download/0.0.2/MagiclabsSDK.xcframework.zip" }
 
   spec.vendored_frameworks = "MagiclabsSDK.xcframework"
   spec.preserve_paths = "MagiclabsSDK.xcframework"
